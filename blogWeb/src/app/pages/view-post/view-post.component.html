@@ -1,0 +1,64 @@
+<section class="singlepost" *ngIf="postData">
+  <div class="container singlepost-container">
+    <h2>{{ postData.name }}</h2>
+
+    <div class="singlepost-reactions">
+      <button (click)="likePost()">
+        <span class="material-symbols-outlined"> thumb_up </span>
+        {{ postData.likeCount }}
+      </button>
+      <button>
+        <span class="material-symbols-outlined"> visibility </span
+        >{{ postData.viewCount }}
+      </button>
+    </div>
+
+    <div class="post-author">
+      <div class="post-author-avatar">
+        <img
+          src="https://images.pexels.com/photos/4458554/pexels-photo-4458554.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt=""
+        />
+      </div>
+
+      <div class="post-author-info">
+        <h5>Feito por: {{ postData.postBy }}</h5>
+        <small>{{ postData.date | date : "medium" }}</small>
+      </div>
+    </div>
+
+    <div class="singlepost-thumbnail">
+      <img [src]="postData.image" alt="" />
+    </div>
+    <p>
+      {{ postData.content }}
+    </p>
+  </div>
+</section>
+
+<!--<div class="card-container" *ngIf="postData">
+  <div class="card">
+    <div class="card-header">
+      <div class="card-avatar"></div>
+      <div class="card-title">{{ postData.name }}</div>
+      <div class="card-title">Poste by: {{ postData.postBy }}</div>
+      <div class="card-title">Poste date: {{ postData.date }}</div>
+    </div>
+
+    <img [src]="postData.image" alt="" />
+    <div class="card-content">
+      {{ postData.content }}
+    </div>
+
+    <div class="card-tags">
+      <li *ngFor="let tag of postData.tags">
+        {{ tag }}
+      </li>
+    </div>
+
+    <div class="card-likes">
+      <button (click)="likePost()">like: {{ postData.likeCount }}</button>
+      <button>view: {{ postData.viewCount }}</button>
+    </div>
+  </div>
+</div>!-->

@@ -1,0 +1,24 @@
+<section class="form-section">
+  <div class="container form-container">
+    <h2>Adicionar Novo Post</h2>
+
+    <form action="" [formGroup]="postForm">
+      <input type="text" placeholder="Titulo" formControlName="name" />
+      <input type="text" placeholder="Autor" formControlName="postBy" />
+      <input type="text" placeholder="Imagem Url" formControlName="image" />
+
+      <input type="text" formControlName="tags" placeholder="Tags" />
+
+      <textarea
+        name=""
+        id=""
+        placeholder="Conteudo"
+        formControlName="content"
+      ></textarea>
+
+      <button [disabled]="!postForm.valid" (click)="createPost()">
+        Publicar Post
+      </button>
+    </form>
+  </div>
+</section>

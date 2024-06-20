@@ -1,0 +1,81 @@
+<section class="featured" *ngIf="allPosts.length > 0">
+  <div class="container featured-container">
+    <div class="post-thumbnail">
+      <img [src]="allPosts[3].image" alt="" />
+    </div>
+
+    <div class="post-info">
+      <a
+        href="/view-post/{{ allPosts[3].id }}"
+        class="category-button"
+        *ngFor="let tag of allPosts[3].tags"
+      >
+        {{ tag }}</a
+      >
+
+      <h2 class="post-tile">
+        <a href="/view-post/{{ allPosts[3].id }}">{{ allPosts[3].name }}</a>
+      </h2>
+      <p class="post-body">
+        {{ allPosts[3].content }}
+      </p>
+
+      <div class="post-author">
+        <div class="post-author-avatar">
+          <img
+            src="https://images.pexels.com/photos/4458554/pexels-photo-4458554.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+        </div>
+        <div class="post-author-info">
+          <h5>Feito por: {{ allPosts[3].postBy }}</h5>
+          <small>{{ allPosts[3].date | date : "medium" }}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="posts">
+  <div class="container posts-container">
+    <article class="post" *ngFor="let post of allPosts">
+      <div class="post-thumbnail">
+        <img [src]="post.image" alt="" />
+      </div>
+
+      <div class="post-info">
+        <a
+          href="/view-post/{{ post.id }}"
+          class="category-button"
+          *ngFor="let tag of post.tags"
+        >
+          {{ tag }}</a
+        >
+
+        <h3 class="post-title">
+          <a href="/view-post/{{ post.id }}">{{ post.name }}</a>
+        </h3>
+        <p class="post-body">
+          {{
+            post.content.length > 250
+              ? post.content.substr(0, 250) + "..."
+              : post.content
+          }}
+        </p>
+        <div class="post-author">
+          <div class="post-author-avatar">
+            <img
+              src="https://images.pexels.com/photos/4458554/pexels-photo-4458554.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
+            />
+          </div>
+
+          <div class="post-author-info">
+            <h5>Feito por: {{ post.postBy }}</h5>
+            <small>{{ post.date | date : "medium" }}</small>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
