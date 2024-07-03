@@ -6,7 +6,7 @@ Deverse é um blog focado em desenvolvimento de jogos. Foi feito usando Spring B
 
 ## Demonstração
 
-![App Screenshot](https://i.imgur.com/Qf048Rb.gif)
+![](https://i.imgur.com/Qf048Rb.gif)
 
 
 ## Stack utilizada
